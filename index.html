@@ -5,23 +5,25 @@
         @font-face {
             font-family: 'Norse';
             src: url('fonts/Norse-Bold.woff2') format('woff2'),
-                url('fonts/Norse-Bold.woff') format('woff');
+                url('fonts/Norse-Bold.woff') format('woff'),
+                url('fonts/Norse-Bold.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Audrey Med';
-            src: url('fonts/Audrey-MediumOblique.woff2') format('woff2'),
-                url('fonts/Audrey-MediumOblique.woff') format('woff');
-            font-weight: 500;
+            font-family: 'Luperca';
+            src: url('fonts/NyghtSerif-Medium.woff2') format('woff2'),
+                url('fonts/NyghtSerif-Medium.woff') format('woff'),
+                url('fonts/NyghtSerif-Medium.otf') format('opentype');
+            font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
     </style>
     <link rel="preload" href="fonts/Norse-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/Audrey-MediumOblique.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/NyghtSerif-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -45,27 +47,60 @@
             <form class="sign-up section">
                 <div class="form-control">
                     <label for="fname">First name</label>
-                    <input type="text" id="fname" required minlength="2" maxlength="20">
+                    <input type="text"
+                        id="fname"
+                        required
+                        minlength="2"
+                        maxlength="30"
+                    />
                 </div>
                 <div class="form-control">
                     <label for="lname">Last name</label>
-                    <input type="text" id="lname" required minlength="2" maxlength="20">
+                    <input type="text"
+                        id="lname"
+                        required
+                        minlength="2"
+                        maxlength="30"
+                    />
                 </div>
                 <div class="form-control">
-                    <label for="email">email</label>
-                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                    <input type="email"
+                        id="email"
+                        autocomplete="email"
+                    />
                 </div>
                 <div class="form-control">
                     <label for="phone">Phone number</label>
-                    <input type="tel" id="phone">
+                    <input type="tel"
+                        id="phone"
+                        autocomplete="tel"
+                        placeholder="+12334567890"
+                        pattern="^\+\d{1,15}$"
+                        title="Please use the international format: a '+' followed by up to 15 digits (e.g., +15551234567)."
+                    />
                 </div>
                 <div class="form-control">
                     <label for="password">Password</label>
-                    <input type="password" id="password">
+                    <input type="password"
+                        id="password"
+                        required
+                        minlength="8"
+                        maxlength="20"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?& ]{8,20}$"
+                        title="your password must have at least 8 characters, includes at least one number,one uppercase letter, and one lowercase letter."
+                    />
                 </div>
                 <div class="form-control">
                     <label for="password-confirm">Confirm password</label>
-                    <input type="password" id="password-confirm">
+                    <input type="password"
+                        id="password-confirm"
+                        required
+                        minlength="8"
+                        maxlength="20"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?& ]{8,20}$"
+                        title="please match you password"
+                    />
                 </div>
             </form>
         </div>

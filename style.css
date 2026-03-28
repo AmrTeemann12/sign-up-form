@@ -4,22 +4,23 @@
 }
 
 :root {
-    --ff: 'Audrey Med' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --ff: 'Luperca' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --ff-logo: 'Norse' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
     --font-size-xl: 38px;
     --font-size-l: 20px;
     --font-size: 18px;
     --font-size-s: 14px;
-    --fw: 500;
+    --fw: 400;
     --fw-b: 600;
 
-    --txt-clr1: rgb(12, 12, 12);
+    --txt-clr1: rgb(24, 24, 24);
     --txt-clr2: #eee;
     --txt-hover-clr2: #ccc;
 
-    --bg-color: rgb(216, 216, 216);
+    --bg-color: rgb(221, 221, 221);
     --container-bg-color-mobile: rgba(255, 255, 255, 0.3);
+    --form-bg-color-desktop: rgb(236, 236, 236);
     
     --bg-width-mobile: 100%;
     --container-width-mobile: 90%;
@@ -29,7 +30,7 @@
     --border-rad1: 8px;
     --border-rad-input: 4px;
 
-    --box-shadow1: 1px 1px 3px 1px rgba(12, 12, 12, 0.685);
+    --box-shadow-container: 1px 1px 3px 1px rgba(12, 12, 12, 0.685);
     --box-shadow-form: 0 2px 5px 1px rgba(20, 20, 20, 0.555);
 }
 
@@ -117,13 +118,13 @@ body {
     font-weight: var(--fw);
     font-family: var(--ff);
 
-    background:content-box padding-box var(--container-bg-color-mobile);
+    background-color: var(--container-bg-color-mobile);
     backdrop-filter: blur(10px);
     color: var(--txt-clr1);
 
     position: relative;
     margin: 0 auto;
-    padding: 16px 0;
+    padding: 4rem 0 1rem 0;
 
     flex-shrink: 0;
 
@@ -133,7 +134,7 @@ body {
     align-items: center;
 
     border-radius: var(--border-rad1);
-    box-shadow: var(--box-shadow1);
+    box-shadow: var(--box-shadow-container);
 }
 
 .container::before {
@@ -185,15 +186,23 @@ input{
     width: 200px;
     padding: 4px;
     border-radius: var(--border-rad-input);
-    font-family: inherit;
+    font-family: var(--ff);
     font-size: 100%;
-    box-shadow: var(--box-shadow1);
-    border: none;
+    box-shadow: var(--box-shadow-container);
+    border: 1px solid transparent;
 }
 
-input[type="password"] {
-    font-family: var(--ff-logo);
-    padding: 5.5px;
+input:user-invalid {
+    border: 1px solid rgb(207, 65, 65);
+}
+
+input:user-valid {
+    border: 1px solid rgb(8, 167, 8);
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid var(--txt-clr1);
 }
 
 label{
@@ -209,6 +218,7 @@ label{
         overflow: hidden;
         padding: 0;
     }
+
     .bg-wrapper {
         width: var(--bg-width-desktop);
         position: relative;
@@ -223,12 +233,14 @@ label{
     }
 
     .container {
+        --border-rad1: 0;
         width: var(--container-width-desktop);
         overflow-y: auto;
-        background-color: var(--bg-color);
+        background-color: var(---bg-color);
         margin: 0;
         box-shadow: none;
         flex: 1 0 auto;
+        padding: 16px 0;
     }
 
     .container::before {
@@ -237,9 +249,11 @@ label{
 
     .section {
         padding: 32px;
+        background-color: transparent;
     }
 
     .form-container {
         box-shadow: var(--box-shadow-form);
+        background-color: var(--form-bg-color-desktop);
     }
 }
