@@ -44,7 +44,7 @@
         </div>
         <div class="form-container">
             <p>Let's do this</p>
-            <form class="sign-up section">
+            <form class="sign-up section" id="sign-form" action="" method="get" >
                 <div class="form-control">
                     <label for="fname">First name</label>
                     <input type="text"
@@ -88,7 +88,7 @@
                         minlength="8"
                         maxlength="20"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?& ]{8,20}$"
-                        title="your password must have at least 8 characters, includes at least one number,one uppercase letter, and one lowercase letter."
+                        title="your password must have at least 8 characters, includes at least one number, one uppercase letter, and one lowercase letter."
                     />
                 </div>
                 <div class="form-control">
@@ -99,12 +99,19 @@
                         minlength="8"
                         maxlength="20"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?& ]{8,20}$"
-                        title="please match you password"
+                        title="please match your password"
                     />
                 </div>
             </form>
         </div>
-        <div class="section"></div>
+        <div class="section submit">
+            <div class="submit-container">
+                <button type="submit" form="sign-form">Create acount</button>
+            </div>
+            <div class="log-in">
+                <p>Already have an acount <a href="#">log in</a></p>
+            </div>
+        </div>
         
     </div>
 </body>

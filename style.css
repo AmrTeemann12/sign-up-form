@@ -10,7 +10,8 @@
     --font-size-xl: 38px;
     --font-size-l: 20px;
     --font-size: 18px;
-    --font-size-s: 14px;
+    --font-size-s: 16px;
+    --font-size-xs: 14px;
     --fw: 400;
     --fw-b: 600;
 
@@ -21,6 +22,9 @@
     --bg-color: rgb(221, 221, 221);
     --container-bg-color-mobile: rgba(255, 255, 255, 0.3);
     --form-bg-color-desktop: rgb(236, 236, 236);
+    --bg-color-second: #5f382fc4;
+    --bg-hover-color-second: #5F382F;
+    --bg-active-color-second: #5f382f6b;
     
     --bg-width-mobile: 100%;
     --container-width-mobile: 90%;
@@ -97,7 +101,7 @@ body {
     left: 50%;
     transform: translate(-50%);
     text-align: center;
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-xs);
     font-family: var(--ff);
 }
 
@@ -146,7 +150,8 @@ body {
     left: 0;
     font-size: var(--font-size-xl);
     font-family: var(--ff-logo);
-    background-color: var(--container-bg-color-mobile);
+    color: var(--txt-clr2);
+    background-color: var(--bg-color-second);
 }
 
 .section {
@@ -209,6 +214,54 @@ label{
     min-width: 150px;
 }
 
+button {
+    padding: 8px 42px;
+    border-radius: var(--border-rad-input);
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--txt-clr2);
+    background-color: var(--bg-color-second);
+    border: 1px solid transparent;
+    box-shadow: var(--box-shadow-container);
+    transition: all 0.4s;
+}
+
+button:hover,
+button:focus {
+    color: var(--txt-hover-clr2);
+    background-color: var(--bg-hover-color-second);
+    border: 1px solid var(--txt-clr1);
+    cursor: pointer;
+    outline: none;
+    transition: 0.4s;
+}
+
+button:active {
+    background-color: var(--bg-active-color-second);
+    transition: 0.2s;
+}
+
+.submit{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.log-in{
+    font-weight: var(--fw-b);
+    font-size: var(--font-size-s);
+}
+
+.log-in a{
+    text-decoration: none;
+    color: var(--bg-color-second);
+}
+
+.log-in a:hover {
+    color: var(--bg-hover-color-second);
+}
+
 @media only screen and (min-width: 768px){
     body {
         display: flex;
@@ -236,7 +289,7 @@ label{
         --border-rad1: 0;
         width: var(--container-width-desktop);
         overflow-y: auto;
-        background-color: var(---bg-color);
+        background-color: var(--bg-color);
         margin: 0;
         box-shadow: none;
         flex: 1 0 auto;
@@ -244,7 +297,7 @@ label{
     }
 
     .container::before {
-        opacity: 0;
+        display: none;
     }
 
     .section {
